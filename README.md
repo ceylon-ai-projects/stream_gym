@@ -22,7 +22,7 @@ while done is False:
 ```
 
 
-##  This is the Class what we act as a Environment
+##  This is the Class what we use to act as a Environment
 ```python
 from abc import abstractmethod, ABC
 
