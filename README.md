@@ -3,6 +3,25 @@ Data Stream Gym for Reinforcement Learning | Stock Market, TimeSeries Data
 
 When we going to develop RL algorithms for stream time series datasets like Stock Market, Forex we need a simple way to manage environment like openai gym. This simple code is help you to start your own openai gym for time series data for streaming data sets
 
+### Here is the magic happen
+
+```python
+
+env = FxDataEnvironment(data_csv.Close.values, data_frame_size, k_steps=k_steps)
+
+state = env.reset()
+done = False
+action = np.array([0, 0, 0, 0, 0, 0, 1])
+while done is False:
+    next_state, reward, done = env.step(action)
+    print(f" state - {state}, next state -{next_state}, reward - {reward}, done status - {done}")
+    if done:
+        print(f"end session {next_state},{state}")
+    state = next_state
+
+
+
+
 ##  This is the Class what we act as a Environment
 ```python
 from abc import abstractmethod, ABC
@@ -109,21 +128,6 @@ class FxDataEnvironment(EnvPlay):
         pass
 
 ```
-### Here is the majic happen
-
-```python
-
-env = FxDataEnvironment(data_csv.Close.values, data_frame_size, k_steps=k_steps)
-
-state = env.reset()
-done = False
-action = np.array([0, 0, 0, 0, 0, 0, 1])
-while done is False:
-    next_state, reward, done = env.step(action)
-    print(f" state - {state}, next state -{next_state}, reward - {reward}, done status - {done}")
-    if done:
-        print(f"end session {next_state},{state}")
-    state = next_state
 
 ```
 
