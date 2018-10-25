@@ -19,7 +19,7 @@ while done is False:
         print(f"end session {next_state},{state}")
     state = next_state
 
-
+```
 
 
 ##  This is the Class what we act as a Environment
@@ -129,7 +129,6 @@ class FxDataEnvironment(EnvPlay):
 
 ```
 
-```
 
 
 Simply You run above example
